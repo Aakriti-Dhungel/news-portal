@@ -4,7 +4,10 @@
          <div class="card">
             <div class="card-header d-flex justify-content-between">
                <h4>Company</h4>
+               @if (!$company)
                <a href="{{route('company.create')}}" class="btn btn-primary"> Add </a>
+               
+               @endif
             </div>
             <div class="card-body">
                <div class="table-responsive">
@@ -23,17 +26,28 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
+                       @if ($company)
+                       <tr>
                            <td>1</td>
                            <td>
-                              <img width="10" src="{{ asset($company->logo) }}" alt="{{ $company->name }}">
+                              <img width="100" src="{{asset($company->logo) }}" alt="{{ $company->name }}">
                            </td>
 
                            <td>{{$company->name}}</td>
                            <td>{{$company->phone}}</td>
                            <td>{{$company->tel}}</td>
                            <td>{{$company->email}}</td>
+                           <td>
+                              <form action="{{route('company.destroy',$company->id)}}" method="post">
+                                 @csrf
+                                 @method('delete')
+
+                                 <button class="btn btn-danger btn-sm">Delete</button>
+                              </form>
+                           </td>
                         </tr>
+                       
+                       @endif
                      </tbody>
                   </table>
                </div>

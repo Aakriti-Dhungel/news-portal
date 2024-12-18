@@ -31,6 +31,14 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "name"=>"required|max:5",
+            "email"=>"required|email",
+            "phone"=>"required|digit:10",
+            "tel"=>"required",
+            "logo"=>"required|max:2048"
+        ]);
+
         // return $request->all();
         $company = new Company();
         $company->name = $request->name;
@@ -47,7 +55,8 @@ class CompanyController extends Controller
         $company->logo='images/'.$fileName;
         }
         $company->save();
-        return "Saved";
+        // return "Saved";
+        return redirect()->route('company.index');
     }
 
     /**
@@ -79,6 +88,9 @@ class CompanyController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //return $id;
+        $company = Company::find($id);
+        $company->delete();
+        return redirect()->back();
     }
 }

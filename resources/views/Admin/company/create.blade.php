@@ -12,33 +12,47 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="name">Company Name <span class="text-danger">*</span></label>
-                                <input type="text" id="name" name="name" class="form-control">
-
+                                <input type="text" id="name" name="name" class="form-control" value="{{old('name')}}">
+                                @error('name')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
-                            
+
                             <div class="col-6">
                                 <label for="email">Email <span class="text-danger">*</span></label>
-                                <input type="text" id="email" name="email" class="form-control">
+                                <input type="text" id="email" name="email" class="form-control" value="{{old('name')}}">
+                                @error('email')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-6">
                                 <label for="phone">Phone <span class="text-danger">*</span></label>
-                                <input type="text" id="phone" name="phone" class="form-control">
+                                <input type="text" id="phone" name="phone" class="form-control" value="{{old('phone')}}">
+                                @error('phone')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-6">
                                 <label for="tel"> Telephone <span class="text-danger">*</span></label>
-                                <input type="text" id="tel" name="tel" class="form-control">
+                                <input type="text" id="tel" name="tel" class="form-control" value="{{old('tel')}}">
+                                @error('tel')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-6">
-                                <label for="facebook">Facebook  </label>
-                                <input type="text" id="facebook" name="facebook" class="form-control">
+                                <label for="facebook">Facebook </label>
+                                <input type="text" id="facebook" name="facebook" class="form-control" value="{{old('facebook')}}">
                             </div>
                             <div class="col-6">
-                                <label for="instagram">Instagram  </label>
-                                <input type="text" id="instagram" name="instagram" class="form-control">
+                                <label for="instagram">Instagram </label>
+                                <input type="text" id="instagram" name="instagram" class="form-control" value="{{old('instagram')}}">
                             </div>
                             <div class="col-6">
                                 <label for="logo">Logo <span class="text-danger">*</span></label>
                                 <input type="file" id="logo" name="logo" class="form-control">
+                                @error('logo')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
                             <div class="col-12 mb-3">
                                 <button type="submit" class="btn btn-success">save Record</button>
