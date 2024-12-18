@@ -55,6 +55,8 @@ class CompanyController extends Controller
         $company->logo='images/'.$fileName;
         }
         $company->save();
+        toast('Record Saved Successfully','success');
+
         // return "Saved";
         return redirect()->route('company.index');
     }
@@ -106,6 +108,7 @@ class CompanyController extends Controller
         }
         $company->save();
         // return "Saved";
+        toast('Record Updated Successfully','success');
         return redirect()->route('company.index');
     }
 
@@ -117,6 +120,7 @@ class CompanyController extends Controller
         //return $id;
         $company = Company::find($id);
         $company->delete();
+        toast('Record deleted Successfully','success');
         return redirect()->back();
     }
 }
