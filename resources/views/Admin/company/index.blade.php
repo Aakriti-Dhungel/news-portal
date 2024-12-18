@@ -25,12 +25,14 @@
                      <tbody>
                         <tr>
                            <td>1</td>
-                           <td>img</td>
-                           <td>coders</td>
-                           <td>98600000</td>
-                           <td>01-123456</td>
-                           <td>hello@gmail.com</td>
-                           <td>submitted</td>
+                           <td>
+                              <img width="10" src="{{ asset($company->logo) }}" alt="{{ $company->name }}">
+                           </td>
+
+                           <td>{{$company->name}}</td>
+                           <td>{{$company->phone}}</td>
+                           <td>{{$company->tel}}</td>
+                           <td>{{$company->email}}</td>
                         </tr>
                      </tbody>
                   </table>
