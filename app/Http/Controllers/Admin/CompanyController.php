@@ -72,7 +72,8 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.company.edit');
+        $company=Company::find($id);
+        return view('admin.company.edit',compact('company'));
     }
 
     /**
@@ -80,7 +81,32 @@ class CompanyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            "name"=>"required|max:5",
+            "email"=>"required|email",
+            "phone"=>"required|digit:10",
+            "tel"=>"required",
+            "logo"=>"max:2048"  //already stays there so we remove required
+        ]);
+
+        // return $request->all();
+        $company = Company::find($id);
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->phone = $request->phone;
+        $company->tel = $request->tel;
+        $company->facebook = $request->facebook;
+        $company->instagram = $request->instagram;
+        
+        if($request->hasFile('logo')){
+        $file=$request->file('logo');
+        $fileName = time(). ".".$file-> getClientOriginalExtension();
+        $file->move('images',$fileName);
+        $company->logo='images/'.$fileName;
+        }
+        $company->save();
+        // return "Saved";
+        return redirect()->route('company.index');
     }
 
     /**
