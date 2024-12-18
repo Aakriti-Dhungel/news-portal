@@ -21,7 +21,7 @@
 
                             <div class="col-6">
                                 <label for="email">Email <span class="text-danger">*</span></label>
-                                <input type="text" id="email" name="email" class="form-control" value="{{$company->email)}}">
+                                <input type="text" id="email" name="email" class="form-control" value="{{$company->email}}">
                                 @error('email')
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror

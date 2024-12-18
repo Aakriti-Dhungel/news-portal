@@ -22,8 +22,12 @@ class CompanyController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('admin.company.create');
+    {   $company = Company::first();
+        if(!$company){
+            return view('admin.company.create');
+        }else{
+            return redirect()->route('company.index');
+        }
     }
 
     /**
@@ -32,9 +36,9 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name"=>"required|max:5",
+            "name"=>"required|max:10",
             "email"=>"required|email",
-            "phone"=>"required|digit:10",
+            "phone"=>"required|digits:10",
             "tel"=>"required",
             "logo"=>"required|max:2048"
         ]);
@@ -84,9 +88,9 @@ class CompanyController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            "name"=>"required|max:5",
+            "name"=>"required|max:10",
             "email"=>"required|email",
-            "phone"=>"required|digit:10",
+            "phone"=>"required|digits:10",
             "tel"=>"required",
             "logo"=>"max:2048"  //already stays there so we remove required
         ]);
