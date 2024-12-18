@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -12,7 +13,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.company.index');
     }
 
     /**
@@ -20,7 +21,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.company.create');
     }
 
     /**
@@ -28,7 +29,23 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->all();
+        $company = new Company();
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->phone = $request->phone;
+        $company->tel = $request->tel;
+        $company->facebook = $request->facebook;
+        $company->instagram = $request->instagram;
+        
+        if($request->hasFile('logo')){
+        $file=$request->file('logo');
+        $fileName = time(). ".".$file-> getClientOriginalExtension();
+        $file->move('images',$fileName);
+        $company->logo='images/'.$fileName;
+        }
+        $company->save();
+        return "Saved";
     }
 
     /**
@@ -36,7 +53,7 @@ class CompanyController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //;
     }
 
     /**
@@ -44,7 +61,7 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.company.edit');
     }
 
     /**
