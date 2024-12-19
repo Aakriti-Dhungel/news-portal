@@ -18,7 +18,6 @@
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-
                             <div class="col-6">
                                 <label for="email">Email <span class="text-danger">*</span></label>
                                 <input type="text" id="email" name="email" class="form-control" value="{{$company->email}}">
@@ -65,5 +64,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>
