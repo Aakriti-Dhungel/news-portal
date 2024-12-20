@@ -27,9 +27,8 @@ return new class extends Migration
 
         Schema::create('category_post', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category-id')->constrained()->cascadeOnDelete(); //cascadeOnDelete() yo rakda category ko post ko sabai delete hunxa
+            $table->foreignId('category-id')->constrained()->cascadeOnDelete(); //cascadeOnDelete() yo rakda category_post ko delete hunxa 
             $table->foreignId('post-id')->constrained()->cascadeOnDelete();
-
             $table->timestamps();
         });
     }
@@ -39,6 +38,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('category_post');
         Schema::dropIfExists('posts');
     }
 };
