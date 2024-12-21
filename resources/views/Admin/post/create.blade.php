@@ -11,16 +11,17 @@
                         @csrf
                         <div class="row">
                             <div class=" mb-3 col-6">
-                                <label for="categories">Categories</label>
+                                <label for="categories">Categories <span class="text-danger">*</span></label>
                                 <select name="categories[]" id="categories" class="form-control select2" multiple>
                                     @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">{{$categoriy->title}}</option>
-                                  
+                                    <option value="{{$category->id}}">{{$category->eng_title}}</option>
                                     @endforeach
                                 </select>
-
+                                @error('categories')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
-                            <div class="col-6">
+                            <div class=" mb-3 col-6">
                                 <label for="title">Post Title<span class="text-danger">*</span></label>
                                 <input type="text" id="title" name="title" class="form-control" value="{{old('title')}}">
                                 @error('title')

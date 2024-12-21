@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('image');
             $table->longText('description');
-            $table->integer('views');
-            $table->longText('meta-words')->default(0);
-            $table->longText('meta-description')->nullable();
+            $table->integer('views')->default(value: 0);
+            $table->longText('meta_words')->nullable();
+            $table->longText('meta_description')->nullable();
             $table->longText('status')->default('pending');
 
             $table->timestamps();
@@ -27,8 +27,8 @@ return new class extends Migration
 
         Schema::create('category_post', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category-id')->constrained()->cascadeOnDelete(); //cascadeOnDelete() yo rakda category_post ko delete hunxa 
-            $table->foreignId('post-id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); //cascadeOnDelete() yo rakda category_post ko delete hunxa 
+            $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

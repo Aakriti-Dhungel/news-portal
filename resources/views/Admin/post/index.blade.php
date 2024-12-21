@@ -21,10 +21,10 @@
                         </tr>
                      </thead>
                      <tbody>
-                        @foreach ($posts as $index->$post)
+                        @foreach ($posts as $index=>$post)
                         <tr>
                            <td>
-                              {{ ++$post}}
+                              {{ ++$index}}
                            </td>
                            <td>
                               {{ $post->title }}

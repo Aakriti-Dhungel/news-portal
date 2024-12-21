@@ -34,17 +34,15 @@ class PostController extends Controller
     {
         $request->validate([
             "title" => "required",
+            "image" => "required|max:2048",  
             "description" => "required",           
             "categories" => "required",
-            "image" => "required|max:2048"
-
         ]);
 
         // return $request->all();
         $post = new Post();
         $post->title = $request->title;
         $post->description = $request->description;
-        $post->categories = $request->categories;
         $post->meta_words = $request->meta_words;
         $post->meta_description = $request->meta_description;
 
