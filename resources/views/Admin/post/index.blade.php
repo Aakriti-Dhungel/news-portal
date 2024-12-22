@@ -36,7 +36,15 @@
                               {{ $post->views }}
                            </td>
                            <td>
-                              {{ $post->status }}
+                              @if ($post->status == 'pending')
+                                 <span class="badge bg-warning text-white">{{ $post->status }}</span>
+                                 @elseif($post->status == 'approved')     
+                                 <span class="badge bg-success text-white">{{ $post->status }}</span>
+                            @else
+                            <span class="badge bg-danger text-white">{{ $post->status }}</span>
+
+                              @endif
+                              
                            </td>
                            <td>
                               <form action="{{ route('post.destroy', $post->id) }}" method="post">

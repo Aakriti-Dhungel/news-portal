@@ -76,7 +76,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::find($id);
+        $categories = Category::all();
+        return view('admin.post.edit',compact('post','categories'));
     }
 
     /**
@@ -84,7 +86,36 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $request->validate([
+            "title" => "required",
+            "description" => "required",           
+            "categories" => "required",
+        ]);
+
+        // return $request->all();
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->meta_words = $request->meta_words;
+        $post->meta_description = $request->meta_description;
+        $post->status = $request->status;
+
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . "." . $file->getClientOriginalExtension();
+            $file->move('images', $fileName);
+            $post->image = 'images/' . $fileName;
+        }
+        $post->update();
+
+        $post->categories()->sync($request->categories); //different categories post attachted in their order 
+
+        toast('Record Saved Successfully', 'success');
+
+        // return "Saved";
+        return redirect()->route('post.index');
     }
 
     /**
