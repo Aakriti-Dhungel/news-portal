@@ -117,7 +117,6 @@ class PostController extends Controller
         // return "Saved";
         return redirect()->route('post.index');
     }
-
     /**
      * Remove the specified resource from storage.
      */
