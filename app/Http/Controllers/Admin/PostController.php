@@ -24,7 +24,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.post.create',compact('categories'));
+        return view('admin.post.create', compact('categories'));
     }
 
     /**
@@ -34,8 +34,8 @@ class PostController extends Controller
     {
         $request->validate([
             "title" => "required",
-            "image" => "required|max:2048",  
-            "description" => "required",           
+            "image" => "required|max:2048",
+            "description" => "required",
             "categories" => "required",
         ]);
 
@@ -78,7 +78,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $categories = Category::all();
-        return view('admin.post.edit',compact('post','categories'));
+        return view('admin.post.edit', compact('post', 'categories'));
     }
 
     /**
@@ -86,10 +86,10 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $request->validate([
             "title" => "required",
-            "description" => "required",           
+            "description" => "required",
             "categories" => "required",
         ]);
 
@@ -123,6 +123,10 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // return $id;
+        $post = Post::find($id);
+        $post->delete();
+        toast('Record deleted Successfully', 'success');
+        return redirect()->back();
     }
 }
