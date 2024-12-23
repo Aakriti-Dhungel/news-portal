@@ -11,7 +11,7 @@
                         @csrf
                         <div class="row">
                             <div class=" mb-3 col-6">
-                                <label for="company_name">Company Name<span class="text-danger">*</span></label>
+                                <label for="company_name">Company Name <span class="text-danger">*</span></label>
                                 <input type="text" name="company_name" id="company_name" class="form-control" value="{{old('company_name')}}">
                                 @error('company_name')
                                     <p class="text-danger">{{ $message }}</p>
@@ -26,7 +26,7 @@
                             </div>
                             <div class=" mb-3 col-6">
                                 <label for="expire_date">Expire Date <span class="text-danger">*</span></label>
-                                <input type="date" name="expire_date" id="expire_date" class="form-control" value="{{old('expire_date')}}">
+                                <input type="text" name="expire_date" id="expire_date" class="form-control" value="{{old('expire_date')}}">
                                 @error('expire_date')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror

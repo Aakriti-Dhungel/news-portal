@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Coders Nepal News - Admin Dashboard Template</title>
+  <link rel="stylesheet" href="/nepalidate/nepali_date.min.css/">
   <!-- General CSS Files -->
   <link rel="stylesheet" href="/assets/css/app.min.css">
   <!-- Template CSS -->
@@ -19,6 +20,7 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.ico' />
+
 </head>
 
 <body>
@@ -176,6 +178,13 @@
     </footer>
   </div>
   </div>
+  <script src="/nepalidate/nepali_date.min.js"></script>
+  <script type="text/javascript">
+        window.onload = function() {
+            var mainInput = document.getElementById("expire_date");
+            mainInput.nepaliDatePicker();
+        };
+    </script>
   <!-- General JS Scripts -->
   <script src="/assets/js/app.min.js"></script>
   <!-- JS Libraies -->

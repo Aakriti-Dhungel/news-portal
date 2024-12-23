@@ -18,7 +18,7 @@
                                 @enderror
                             </div>
                             <div class=" mb-3 col-6">
-                                <label for="contact">Contacte<span class="text-danger">*</span></label>
+                                <label for="contact">Contact<span class="text-danger">*</span></label>
                                 <input type="tel" id="contact" name="contact" class="form-control" value="{{old('contact') ?? $advertise->contact }}">
                                 @error('contact')
                                 <p class="text-danger">{{$message}}</p>
