@@ -11,7 +11,7 @@
                         @csrf
                         <div class="row">
                             <div class=" mb-3 col-6">
-                                <label for="company_name">Advertise Title <span class="text-danger">*</span></label>
+                                <label for="company_name">Company Name<span class="text-danger">*</span></label>
                                 <input type="text" name="company_name" id="company_name" class="form-control" value="{{old('company_name')}}">
                                 @error('company_name')
                                     <p class="text-danger">{{ $message }}</p>
@@ -33,7 +33,7 @@
                             </div>
                             <div class=" mb-3 col-6">
                                 <label for="redirect_url">Redirect URL <span class="text-danger">*</span></label>
-                                <input type="text" name="redirect_url" id="redirect_url" class="form-control" value="{{old('redirect_url')}}">
+                                <input type="url" name="redirect_url" id="redirect_url" class="form-control" value="{{old('redirect_url')}}">
                                 @error('redirect_url')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror

@@ -31,13 +31,15 @@
                               {{ $advertise->company_name }}
                            </td>
                            <td>
+                              <a href="{{ $advertise->redirect_url }}" target="_blanck">
                               <img width="120" src="{{asset($advertise->banner)}}" alt="{{$advertise->company_name}}">
+                              </a>
                            </td>
                            <td>
                               {{ $advertise->contact }}
                            </td>
                            <td>
-                              {{ $advertise->expire_date }}
+                              {{date('M d,Y',strtotime($advertise->expire_date))}}
                            </td>
                            <td>
                               <form action="{{ route('advertise.destroy', $advertise->id) }}" method="post">
