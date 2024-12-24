@@ -1,6 +1,6 @@
 <x-frontend-layout>
 
-
+{{$company}}
 
 
 
