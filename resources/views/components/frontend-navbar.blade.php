@@ -1,4 +1,4 @@
-<nav class="py-4 bg-[#642571] text-white my-4">
+<nav class="py-4 bg_primary text-white my-4">
     <div class="container">
         <div class="md:hidden">
             <button class=" " type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
@@ -31,7 +31,7 @@
             </button>
 
             <!-- Dropdown menu -->
-            <div id="dropdown" class="z-10 hidden bg-[#642571] divide-y divide-gray-100 rounded-lg shadow w-44 text-white">
+            <div id="dropdown" class="z-10 hidden bg_primary divide-y divide-gray-100 rounded-lg shadow w-44 text-white">
                 <ul class="py-2 mx-4 text-sm" aria-labelledby="dropdownDefaultButton">
                     @foreach ($l_categories as $category)
                     <li>
@@ -48,7 +48,7 @@
 </nav>
 
 <!-- drawer component -->
-<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80 bg-[#642571] text-white" tabindex="-1" aria-labelledby="drawer-label">
+<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-80 bg_primary text-white" tabindex="-1" aria-labelledby="drawer-label">
     <h5 class="text-2xl mb-4 ">Menu</h5>
     <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

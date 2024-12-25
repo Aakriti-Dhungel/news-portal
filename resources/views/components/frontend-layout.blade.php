@@ -7,12 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/app.min.css">
     @vite(['resources/css/app.css','resources/js/app.js'])
-    <style>
-        .container{
-            width:86%;
-            margin: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="/frontend/style.css">
 </head>
 
 <body>
@@ -31,7 +26,7 @@
     </header>
 
     <main>
-
+    {{ $slot }}
     </main>
 
     <footer>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Company;
+use App\Models\Post;
 use App\View\Components\FrontendLayout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -22,6 +23,8 @@ class PageController extends Controller
         ]);
     }
     public function home(){
-        return view('frontend.home');
+        $latest_post = Post::orderBy('id','desc')->first();
+        $trending_posts = Post::orderBy('views','desc')->take(8)->get();
+        return view('frontend.home',compact('latest_post'));
     }
 }

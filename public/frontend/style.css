@@ -1,0 +1,22 @@
+ /* css variable */
+ :root{
+    --primary:#642571;
+    --light_primary:#6425711a;
+}
+.bg_primary{
+    background-color: var(--primary);
+    color: white;
+}
+.text_primary{
+    color: var(--primary);
+}
+.bg-light_primary{
+    background-color: var(--light_primary);
+}
+
+/* css variable end */
+
+.container{
+    width:86%;
+    margin: auto;
+}
