@@ -25,6 +25,6 @@ class PageController extends Controller
     public function home(){
         $latest_post = Post::orderBy('id','desc')->first();
         $trending_posts = Post::orderBy('views','desc')->take(8)->get();
-        return view('frontend.home',compact('latest_post'));
+        return view('frontend.home',compact('latest_post','trending_posts'));
     }
 }
