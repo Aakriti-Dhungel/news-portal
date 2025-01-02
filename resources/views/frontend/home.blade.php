@@ -18,6 +18,17 @@
             </div>
         </div>
     </section>
+<section>
+    <div class="container py-10">
+        @foreach ($categories as $category)
+            <h1>{{ $category->nep_title }}</h1>
+            @foreach ($category->posts as $post)
+                <p>{{ $post->title }}</p>
+            @endforeach
+        @endforeach
+    </div>
+</section>
 
-    
+
+
 </x-frontend-layout>
