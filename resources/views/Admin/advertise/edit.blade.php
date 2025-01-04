@@ -26,7 +26,7 @@
                             </div>
                             <div class=" mb-3 col-6">
                                 <label for="expire_date">Expire Date<span class="text-danger">*</span></label>
-                                <input type="text" id="expire_date" name="expire_date" class="form-control" value="{{old('expire_date') ?? $advertise->expire_date }}">
+                                <input type="date" id="expire_date" name="expire_date" class="form-control" value="{{old('expire_date') ?? $advertise->expire_date }}">
                                 @error('expire_date')
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror

@@ -4,7 +4,7 @@
             <div class="md:col-span-8 w-[100%]">
                 <img src="{{asset($latest_post->image)}}" alt="{{$latest_post->title}} " class="w-full">
                 <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold mt-2"> {{$latest_post->title}}</h1>
-                <div class="description h-20 overflow-hidden limited-text">
+                <div class="description h-20 overflow-hidden  limited-text">
                     {{$latest_post->description}}
                     <!-- {!! Str::limit($latest_post->description,200,'...' )!!} -->
 

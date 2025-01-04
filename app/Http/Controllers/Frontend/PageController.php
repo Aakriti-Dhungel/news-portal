@@ -33,9 +33,8 @@ class PageController extends Controller
     {
         $category = Category::where('slug', $slug)->first();
         $category_posts = $category->posts;
-        $posts = $category->posts()->paginate(1); 
-       
-       
-        return view('frontend.category', compact('posts', 'category_posts'));
+        $posts = $category->posts()->paginate(10); 
+        $advertises=Advertise::where('expire_date','>=',date('Y-m-d'))->get();
+        return view('frontend.category', compact('posts','category_posts','advertises'));
     }
 }
