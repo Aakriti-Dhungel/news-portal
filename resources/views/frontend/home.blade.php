@@ -13,7 +13,7 @@
             <div class="md:col-span-4 space-y-4">
                 <h1 class="bg-light_primary px-3 py-1 text-3xl font-semibold border-l-4 border-[#642571]">ट्रेन्डिङ</h1>
                 @foreach ($trending_posts as $post )
-                <x-post-card :post="$post" />
+                <x-post-card :post="$post"/>
                 @endforeach
             </div>
         </div>

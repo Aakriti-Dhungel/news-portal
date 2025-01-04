@@ -17,7 +17,7 @@
 
             @foreach ($f_categories as $category)
             <li>
-                <a href="#" class="hover:text-pink-600 hover:no-underline"> {{$category->nep_title}}</a>
+                <a href="{{route('cat',$category->slug)}}" class="hover:text-pink-600 hover:no-underline"> {{$category->nep_title}}</a>
             </li>
             @endforeach
 
