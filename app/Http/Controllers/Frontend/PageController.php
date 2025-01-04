@@ -23,8 +23,12 @@ class PageController extends Controller
         ]);
     }
     public function home(){
-        $latest_post = Post::orderBy('id','desc')->first();
-        $trending_posts = Post::orderBy('views','desc')->take(8)->get();
+        $latest_post = Post::orderBy('id','desc')->where('status','approved')->first();
+        $trending_posts = Post::orderBy('views','desc')->where('status','approved')->take(8)->get();
         return view('frontend.home',compact('latest_post','trending_posts'));
+    }
+    public function category($slug){
+       $category = Category::where('slug',$slug)->first();
+        return view('frontend.category',compact('category'));
     }
 }
