@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Advertise;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Post;
@@ -31,7 +32,10 @@ class PageController extends Controller
     public function category($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        $posts = $category->posts;
-        return view('frontend.category', compact('category', 'posts'));
+        $category_posts = $category->posts;
+        $posts = $category->posts()->paginate(1); 
+       
+       
+        return view('frontend.category', compact('posts', 'category_posts'));
     }
 }

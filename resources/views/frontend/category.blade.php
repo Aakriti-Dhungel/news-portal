@@ -3,7 +3,7 @@
         <div class="container grid md:grid-cols-12 gap-5">
 
             <div class="md:col-span-8 space-y-4 ">
-            @foreach($category->posts as $post )
+            @foreach($posts as $post )
             <div class=" grid grid-cols-12 gap-5 items-center rounded-lg overflow-hidden hover:shadow-lg duration-500">
                 <div class="col-span-5 ">
                     <img src="{{ asset($post->image)}}" alt="{{$post->title}}">
@@ -15,6 +15,7 @@
                 </div>
             </div>
             @endforeach
+            {{$posts->links()}}
             </div>
 
             <div>
