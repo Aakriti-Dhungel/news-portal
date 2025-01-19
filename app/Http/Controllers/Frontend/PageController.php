@@ -37,4 +37,11 @@ class PageController extends Controller
         $advertises=Advertise::where('expire_date','>=',date('Y-m-d'))->get();
         return view('frontend.category', compact('posts','category_posts','advertises'));
     }
+
+    public function news($id)
+    {
+        $news=Post::find($id);
+        $advertises=Advertise::where('expire_date','>=',date('Y-m-d'))->get();
+        return view('frontend.news', compact('news','advertises'));
+    }
 }

@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'home'])->name('home');
 Route::get('/category/{slug}', [PageController::class,'category'])->name('cat');
+Route::get('/news/{id}', [PageController::class,'news'])->name('news');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Admin Routes ctrl+space
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
