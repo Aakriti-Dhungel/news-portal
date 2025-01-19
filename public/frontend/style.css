@@ -20,7 +20,7 @@
     width:86%;
     margin: auto;
 }
-.limited-text{
+.limited-text {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

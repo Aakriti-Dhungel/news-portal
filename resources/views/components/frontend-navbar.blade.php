@@ -59,7 +59,7 @@
     <ul class="space-y-4">
         <li><a href="{{route('home')}}" class="text-pink-600 font-semibold hover:text-pink-600 hover:no-underline">गृहपृष्ठ</a></li>
         @foreach ($categories as $category)
-        <li><a href="#" class="hover:text-pink-600 hover:no-underline"> {{$category->nep_title}}</a></li>
+        <li><a href="{{route('cat',$category->slug)}}" class="hover:text-pink-600 hover:no-underline"> {{$category->nep_title}}</a></li>
         @endforeach
     </ul>
 

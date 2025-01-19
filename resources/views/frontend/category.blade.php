@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-span-7 ">
                         <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">{{$post->title}} </h1>
-                        <div class="limited-text">{!! $post->description !!}</div>
+                        <div class="limited-text overflow-hidden">{!! $post->description !!}</div>
                         <small> प्रकाशित मितिः<i class="fas fa-calendar-alt p-0.5"></i>{{nepalidate($post->created_at)}}| 549 पटक पढिएको </small>
                     </div>
                 </div>
