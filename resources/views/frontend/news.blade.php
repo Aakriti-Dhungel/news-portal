@@ -5,7 +5,6 @@
             <div class="md:col-span-8 space-y-4 ">
                 <p>
                     <i class="fas fa-calendar-alt p-0.5"></i> प्रकाशित मितिः  {{ nepalidate($news->created_at) }} |
-                    
                     <i class="fas fa-newspaper p-0.5"></i> {{$news->views}} पटक पढिएको
                 </p>
                 <h1 class="text-3xl font-semibold">
