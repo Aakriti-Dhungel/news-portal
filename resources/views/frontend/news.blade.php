@@ -1,5 +1,6 @@
 <x-frontend-layout>
     <section>
+        <a href="{{route('pdf',$news->id)}}" target="_blank">Download Pdf</a>
         <div class="container grid md:grid-cols-12 gap-5">
 
             <div class="md:col-span-8 space-y-4 ">
