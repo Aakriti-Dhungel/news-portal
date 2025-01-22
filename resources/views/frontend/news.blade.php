@@ -4,8 +4,8 @@
 
             <div class="md:col-span-8 space-y-4 ">
                 <p>
-                    <i class="fas fa-calendar-alt p-0.5"></i> प्रकाशित मितिः  {{ nepalidate($news->created_at) }} |
-                    <i class="fas fa-newspaper p-0.5"></i> {{$news->views}} पटक पढिएको
+                    <i class="fas fa-calendar-alt p-0.5"></i> प्रकाशित मितिः {{ nepalidate($news->created_at) }} |
+                    <i class="fas fa-newspaper p-0.5"></i> {{ $news->views }} पटक पढिएको
                 </p>
                 <h1 class="text-3xl font-semibold">
                     {{$news->title}}
@@ -14,6 +14,7 @@
                 <div>
                     {!! $news->description !!}
                 </div>
+                <div class="sharethis-inline-share-buttons"></div>
             </div>
 
             <div class="col-span-4 space-y-4">
@@ -28,5 +29,8 @@
 
         </div>
     </section>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=678e3a8ae895630012c10caa&product=inline-share-buttons&source=platform" async="async"></script>
 
+
+  
 </x-frontend-layout>

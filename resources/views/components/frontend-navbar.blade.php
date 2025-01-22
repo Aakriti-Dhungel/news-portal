@@ -1,4 +1,4 @@
-<nav class="py-4 bg_primary text-white my-4">
+<nav class="py-4 bg_primary text-white my-4 sticky top-0">
     <div class="container">
         <div class="md:hidden">
             <button class=" " type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">

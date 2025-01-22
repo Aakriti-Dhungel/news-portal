@@ -42,12 +42,11 @@ class PageController extends Controller
     public function news($id)
     {
         $news=Post::find($id);
-        $news->increment('views');
         $cookie=Cookie::get("post$id");
         //check if there is cookie or not or cookie is equal to id 
-        if(!$cookie || $cookie != $id){
+        if(!$cookie || $cookie!=$id){
             $news->increment('views');
-            Cookie::queue(Cookie::make("post$id",$id,0)); //until browser close
+            Cookie::queue(Cookie::make("post$id",$id,0));
         }
         $advertises=Advertise::where('expire_date','>=',date('Y-m-d'))->get();
         return view('frontend.news', compact('news','advertises'));

@@ -22,10 +22,10 @@
                 <img class="h-[10px] md:h-[15px] lg:h-[20px]" src="https://jawaaf.com/frontend/images/redline.png" alt="Line">
             </div>
         </div>
-        <x-frontend-navbar/>
     </header>
-
+    
     <main>
+        <x-frontend-navbar/>
     {{ $slot }}
     </main>
 
