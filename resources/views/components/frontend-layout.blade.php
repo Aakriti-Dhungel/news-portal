@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="/assets/css/app.min.css">
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="/frontend/style.css">
+
+    <style>
+        .description figure,
+        .description img {
+            width: 100% !important;
+            display: none !important;
+        }
+
+        @media (min-width: 768px) {
+            .description figure,
+            .description img {
+                width: 100% !important;
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,10 +39,10 @@
             </div>
         </div>
     </header>
-    
+
     <main>
-        <x-frontend-navbar/>
-    {{ $slot }}
+        <x-frontend-navbar />
+        {{ $slot }}
     </main>
 
     <footer>
