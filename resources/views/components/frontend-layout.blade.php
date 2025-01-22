@@ -17,6 +17,7 @@
         }
 
         @media (min-width: 768px) {
+
             .description figure,
             .description img {
                 width: 100% !important;
@@ -31,7 +32,7 @@
     <header>
         <div class="container flex justify-between items-center">
             <div>
-                <img class="h-[50px] md:h-[70px] lg:h-[90px]" src="{{asset($company->logo)}}" alt="Company Logo">
+                <img class="h-[50px] md:h-[70px] lg:h-[90px]" src="{{asset($company->logo)}}" alt="{{$company->name}}">
             </div>
             <div>
                 {{nepalidate(now())}}
@@ -46,7 +47,7 @@
     </main>
 
     <footer>
-
+        <x-frontend-footer />
     </footer>
 </body>
 

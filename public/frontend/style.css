@@ -1,7 +1,7 @@
  /* css variable */
  :root{
     --primary:#642571;
-    --light_primary:#6425711a;
+    --light_primary:#0000001a;
 }
 .bg_primary{
     background-color: var(--primary);
@@ -14,6 +14,9 @@
     background-color: var(--light_primary);
 }
 
+.bg_primary_gradient {
+    background: linear-gradient(to right, var(--primary), var(--light_primary));
+}
 /* css variable end */
 
 .container{
