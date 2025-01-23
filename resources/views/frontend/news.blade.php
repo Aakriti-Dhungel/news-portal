@@ -1,8 +1,6 @@
 <x-frontend-layout>
     <section>
-        <a href="{{route('pdf',$news->id)}}" target="_blank">Download Pdf</a>
         <div class="container grid md:grid-cols-12 gap-5">
-
             <div class="md:col-span-8 space-y-4 ">
                 <p>
                     <i class="fas fa-calendar-alt p-0.5"></i> प्रकाशित मितिः {{ nepalidate($news->created_at) }} |
@@ -16,22 +14,25 @@
                     {!! $news->description !!}
                 </div>
                 <div class="sharethis-inline-share-buttons"></div>
+                <div class="mt-6 flex justify-center">
+                    <a href="{{ route('pdf', $news->id) }}" target="_blank" class="bg_primary text-white py-2 px-4 rounded-md">
+                        Download PDF
+                    </a>
+                </div>
             </div>
 
             <div class="col-span-4 space-y-4">
                 @foreach ($advertises as $ad)
                 <a href="{{$ad->redirect_url}}" target="_blank">
-                    <img class="w-full" src="{{asset($ad->banner)}}" alt="{{ $ad->company_name">
+                    <img class="w-full" src="{{asset($ad->banner)}}" alt="{{ $ad->company_name}}">
                 </a>
                 @endforeach
 
             </div>
-
-
         </div>
     </section>
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=678e3a8ae895630012c10caa&product=inline-share-buttons&source=platform" async="async"></script>
 
 
-  
+
 </x-frontend-layout>

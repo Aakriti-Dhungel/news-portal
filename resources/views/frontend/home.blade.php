@@ -33,15 +33,16 @@
             $posts = $category->posts->take(12);
             @endphp
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                 <!-- to make different design for the first post -->
-                <!-- @foreach ($posts as $index => $post)
+                <!-- to make different design for the first post 
+                 @foreach ($posts as $index => $post)
                 @if ($index==0)
                 <h1>hello</h1>
                 @else
                 <x-post-card :post="$post" />
-                @endif -->
+                @endif
 
                 @endforeach
+                 -->
                 @foreach ($posts as $post)
                 <x-post-card :post="$post" />
                 @endforeach
