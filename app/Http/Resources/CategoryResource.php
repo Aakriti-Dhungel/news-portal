@@ -20,6 +20,7 @@ class CategoryResource extends JsonResource
             "nepali_title"=>$this->nep_title,
             "eng_title"=>$this->eng_title,
             "slug"=>$this->slug,
+            "posts"=>PostResource::collection($this->posts),
         ];
     }
 }
