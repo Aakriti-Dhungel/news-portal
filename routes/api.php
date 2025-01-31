@@ -11,13 +11,19 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('categories',[ApiController::class,'categories']);
-Route::get('category/{slug}',[ApiController::class,'category']);
-Route::get('company',[ApiController::class,'company']);
-Route::get('trending-posts',[ApiController::class,'trending_posts']);
-Route::get('latest-post',[ApiController::class,'latest_post']);
-Route::post('create-category',[ApiController::class,'create_category']);
-Route::apiResource('post',PostController::class);
+Route::get('categories', [ApiController::class, 'categories']);
+Route::get('category/{slug}', [ApiController::class, 'category']);
+Route::get('company', [ApiController::class, 'company']);
+Route::get('trending-posts', [ApiController::class, 'trending_posts']);
+Route::get('latest-post', [ApiController::class, 'latest_post']);
+Route::post('create-category', [ApiController::class, 'create_category']);
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('post', PostController::class);
+
+    Route::delete('/logout', [AuthController::class, 'logout']);
+});
 //Auth Routes
-Route::post('/register',[AuthController::class,'register']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+//Route::delete('/logout',[AuthController::class,'logout'])->middleware('auth:sanctum');

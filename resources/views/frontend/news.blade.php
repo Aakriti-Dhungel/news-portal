@@ -27,12 +27,10 @@
                     <img class="w-full" src="{{asset($ad->banner)}}" alt="{{ $ad->company_name}}">
                 </a>
                 @endforeach
-
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=678e3a8ae895630012c10caa&product=inline-share-buttons&source=platform" async="async"></script>
-
+   
 
 
 </x-frontend-layout>

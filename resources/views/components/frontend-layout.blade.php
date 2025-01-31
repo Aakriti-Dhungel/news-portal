@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>News</title>
     <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=678e3a8ae895630012c10caa&product=inline-share-buttons&source=platform" async="async"></script>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="/frontend/style.css">
+    
 
     <style>
         .description figure,

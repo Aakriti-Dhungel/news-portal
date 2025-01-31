@@ -7,6 +7,24 @@
 
                 <h1 class="text-3xl font-bold">{{$company->name}}</h1>
                 <img class="h-[40px] md:h-[50px] lg:h-[70px]  mx-auto my-4 rounded-xl shadow-lg" src="{{asset($company->logo)}}" alt="{{$company->name}}">
+
+                <b>अध्यक्ष</b>
+                <p>रत्न कला राई</p>
+
+                <b>सम्पादक</b>
+                <p>सुरज घिमिरे</p>
+
+                <b>कम्पनी दर्ता प्रमाणपत्र नं</b>
+                <p>३३३७५६/०८०/०८१</p>
+
+                <b>स्थानीय लेखा नं</b>
+                <p>६२१११२२३४</p>
+
+                <b>सूचना तथा प्रसारण विभाग दर्ता नं</b>
+                <p>४७२४-२०८१/२०८२</p>
+
+                <b>प्रेस काउन्सिल दर्ता नं</b>
+                <p>४७३२-२०८१/०८२</p>
             </div>
         </div>
 
@@ -16,6 +34,20 @@
             <div class="card-body">
                 <h1 class="text-3xl font-bold">{{$company->name}}</h1>
                 <img class="h-[40px] md:h-[50px] lg:h-[70px]  mx-auto my-4 rounded-xl shadow-lg" src="{{asset($company->logo)}}" alt="{{$company->name}}">
+
+                <b>इमेल:aakritinews@gmail.com</b>
+
+                <b>फोन: 9800000000</b>
+
+                <b>टेलिफोन: 9800000000</b>
+
+                <b>धरान १५ सुनसरी</b>
+
+                <b>विज्ञापन को लागी</b>
+                <b>इमेल: aakritiadv@gmail.com</b>
+<br>
+                <b> फोन: 9800000000/ 9800000000</b>
+               
             </div>
         </div>
 
@@ -24,6 +56,7 @@
             <div class="card-body">
                 <h1 class="text-3xl font-bold">{{$company->name}}</h1>
                 <img class="h-[40px] md:h-[50px] lg:h-[70px]  mx-auto my-4 rounded-xl shadow-lg" src="{{asset($company->logo)}}" alt="{{$company->name}}">
+                
             </div>
         </div>
 </div>
