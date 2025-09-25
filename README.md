@@ -1,4 +1,22 @@
-#News portal
+# News portal
+A modern and responsive news portal built to keep you updated with the latest news.
+
+## Demo 
+Here’s a quick preview of the portal interface:
+# Frontend
+![Demo Image 1](Img/1.png)
+![Demo Image 2](Img/2.png)
+![Demo Image 3](Img/3.png)
+![Demo Image 4](Img/4.png)
+# Dashboard
+![Demo Image 5](Img/5.png)
+![Demo Image 6](Img/6.png)
+![Demo Image 7](Img/7.png)
+![Demo Image 8](Img/8.png)
+![Demo Image 9](Img/9.png)
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
