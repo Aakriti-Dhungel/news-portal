@@ -3,13 +3,11 @@ FROM node:24 AS frontend
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY resources resources
-COPY vite.config.js postcss.config.js tailwind.config.js ./
+COPY . .
 RUN npm run build
 
 # Stage 2 - Backend (Laravel + PHP + Composer)
-FROM php:8.2-fpm
-WORKDIR /var/www
+FROM php:8.2-fpm AS backend
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -19,17 +17,20 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copy composer files first to cache dependencies
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader
+WORKDIR /var/www
 
 # Copy app files
 COPY . .
 
 # Copy built frontend from Stage 1
-COPY --from=frontend /app/public/dist ./public/dist
+# COPY --from=frontend /app/public/dist ./public/dist
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
 
 # Laravel setup
-RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
+RUN php artisan config:clear && \
+    php artisan route:clear && \
+    php artisan view:clear
 
 CMD ["php-fpm"]
